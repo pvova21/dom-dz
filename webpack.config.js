@@ -6,6 +6,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'), // каталог для результатов сборки
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -31,19 +32,17 @@ module.exports = {
         ],
       },
       {
-        test: /\.png$/,
-        type: 'asset/resource',
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        loader: 'file-loader',
       },
     ],
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[id].css',
     }),
   ],
 };
