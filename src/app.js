@@ -19,5 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cells[selectedCellIndex].innerHTML = '<img src="https://raw.githubusercontent.com/netology-code/ahj-homeworks/video/dom/pic/goblin.png">';
     newCellIndex = selectedCellIndex;
-  }, 500);
+  }, 1000);
 });
